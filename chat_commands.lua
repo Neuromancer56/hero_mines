@@ -35,8 +35,8 @@ local function clear_inv(name, param)
             inventory:add_item("main", "hero_tnt:tnt 6")
 			inventory:add_item("main", "fire:flint_and_steel")
 			inventory:add_item("main", "hero_jetpack:jetpack_fuel 8")
+			inventory:add_item("main", "default:sword_diamond")
 			
-
             minetest.chat_send_player(name, "Your inventory has been cleared and replaced with the only items you should use at start of hero mine level.")
         else
             minetest.chat_send_player(name, "Player not found.")
