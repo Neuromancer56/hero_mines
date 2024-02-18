@@ -1,5 +1,12 @@
 
-
+minetest.register_node("hero_mines:level_magma", {
+    description = "Script Runner Level Magma",
+    tiles = {"script_runner.png"},
+    groups = {cracky = 3, oddly_breakable_by_hand = 1},
+    on_punch = function(pos, node, puncher)
+		run_script(pos, script_table_levelmagma)
+    end,
+})
 
 
 --https://www.youtube.com/watch?v=bpzN0fagzi8&t=42s
@@ -138,12 +145,5 @@ local script_table_levelmagma = {
 	{"fill_box", -1, 4, 3, "X", "air", "default:chest", "B", 0},
 }
 
-minetest.register_node("hero_mines:level_magma", {
-    description = "Script Runner Level Magma",
-    tiles = {"script_runner.png"},
-    groups = {cracky = 3, oddly_breakable_by_hand = 1},
-    on_punch = function(pos, node, puncher)
-		run_script(pos, script_table_levelmagma)
-    end,
-})
+
 
