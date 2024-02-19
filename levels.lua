@@ -142,7 +142,14 @@ local script_tables = {
 		{"move", "y", 12},
 		{"move", "x", -21},
 		{"fill_box", 3, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
-
+		--screen 5 (1:05 start)
+		{"move", "x", 1},
+		{"fill_box", 15, 4, 3, "X", "air", "default:mese_post_light", "T", 7},
+		{"fill_box", 1, 4, 3, "X", "default:cobble"},
+		{"fill_box", 6, 4, 3, "X", "air", "default:mese_post_light", "T", 2},
+		{"move", "x", -10},
+		{"fill_box", 2, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 6 (1:08 start)
 	}
 }
 
