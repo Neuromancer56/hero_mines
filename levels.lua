@@ -150,8 +150,29 @@ local script_tables = {
 		{"move", "x", -10},
 		{"fill_box", 2, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
 		--screen 6 (1:08 start)
+		{"move", "x", 10},
+		{"fill_box", -14, 4, 3, "X", "air", "default:mese_post_light", "T", -6},
+		{"fill_box", -1, 4, 3, "X", "default:cobble"},
+		{"fill_box", -6, 4, 3, "X", "air", "default:mese_post_light", "T", -6},
+		{"move", "x", 1},
+		{"fill_box", 1, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		{"move", "y", 12},
+		{"move", "x", 19},
+		{"fill_box", 1, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 7 (1:12 start)
+		{"move", "x", 1},
+		{"fill_box", -18, 4, 3, "X", "air", "default:mese_post_light", "T", -8},
+		{"fill_box", -1, 4, 3, "X", "default:cobble"},
+		{"fill_box", -5, 4, 3, "X", "air", "default:mese_post_light", "T", -5},
+		{"move", "x", 8},
+		{"fill_box", 6, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 8 (1:16 start)
+
 	}
 }
+
+--https://www.youtube.com/watch?v=bpzN0fagzi8&t=42s
+--levels
 
 for level = 1, 4 do
     minetest.register_node("hero_mines:level_" .. level, {
