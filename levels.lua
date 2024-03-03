@@ -17,6 +17,7 @@ minetest.register_node("hero_mines:magma", {
 local script_tables = {
 	--level 1
 	{
+		--screen 1
 		{"fill_box", 3, -10, 3, "Y", "air", "default:mese_post_light", "T", -5},
 		{"move", "x", -1},
 		{"fill_box", 6, 4, 3, "X", "air", nil, nil, nil},
@@ -32,6 +33,7 @@ local script_tables = {
 	},
 	--level 2
 	{
+		--screen 1
 		{"fill_box", 3, -10, 3, "Y", "air", "default:mese_post_light", "T", -5},
 		{"move", "x", -1},
 		{"fill_box", 6, 4, 3, "X", "air", nil, nil, nil},
@@ -64,6 +66,7 @@ local script_tables = {
 	},
 	--level 3
 	{
+		--screen 1
 		{"fill_box", 3, -10, 3, "Y", "air", "default:mese_post_light", "T", -5},
 		{"move", "x", -1},
 		{"fill_box", 6, 4, 3, "X", "air", nil, nil, nil},
@@ -167,10 +170,61 @@ local script_tables = {
 		{"fill_box", -1, 4, 3, "X", "default:cobble"},
 		{"fill_box", -5, 4, 3, "X", "air", "default:mese_post_light", "T", -5},
 		{"move", "x", 8},
-		{"fill_box", 6, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		{"fill_box", 6, -12, 3, "Y", "air", "default:mese_post_light", "T", -11},
 		--screen 8 (1:16 start)
+		{"move", "x", -6},
+		{"move", "y", -3},
+		{"fill_box", 8, 4, 3, "X", "air", "default:mese_post_light", "T", 3},
+		{"move", "x", 2},
+		{"fill_box", 8, 4, 3, "X", "air", "default:chest", "B", 7},
 	},
-	--level 5 
+	--level 5
+	{
+		--screen 1 (1:22 start)
+		{"fill_box", 3, -10, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		{"move", "x", -1},
+		{"fill_box", 6, 4, 3, "X", "air", nil, nil, nil},
+		{"fill_box", 1, 4, 3, "X", "default:cobble", nil, nil, nil},
+		{"fill_box", 10, 4, 3, "X", "air", "default:mese_post_light", "T", 5},
+		{"move", "x", -9},
+		{"fill_box", 3, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 2 (1:27 start)
+		{"move", "x", 10},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -3},
+		{"fill_box", -23, 4, 3, "X", "air", "default:mese_post_light", "T", -15},
+		--screen 3 (1:29 start)
+		{"fill_box", -24, 4, 3, "X", "air", "default:mese_post_light", "T", -15},
+		{"move", "x", 2},
+		{"fill_box", 19, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 4 (1:30 start)
+		{"fill_box", 5, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 9, 4, 3, "X", "air"},
+		{"fill_box", 8, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -14},
+		{"fill_box", 1, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 4 (1:31 start)
+		{"move", "x", 10},
+		{"fill_box", -14, 4, 3, "X", "air", "default:mese_post_light", "T", -5},
+		{"fill_box", -8, 4, 3, "X", "air", "default:mese_post_light", "T", -5},
+		{"move", "x", 21},
+		{"fill_box", 1, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		{"move", "y", 12},
+		{"move", "x", -19},
+		{"fill_box", 1, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 5 (1:35 start)
+		{"move", "x", -1},
+		{"fill_box", -3, 4, 3, "X", "hero_mines:magma",},
+		{"move", "x", 3},
+		{"fill_box", 4, 4, 3, "X", "air", "default:mese_post_light", "T", 0},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 17, 4, 3, "X", "air", "default:mese_post_light", "T", 7},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma",},
+		{"move", "x", -15},
+		{"fill_box", 3, -12, 3, "Y", "air", "default:mese_post_light", "T", -5},
+		--screen 5 (1:38 start)
+	},
+	--level 6 
 	{
 		--screen 1 (:55 start lvl)
 		{"fill_box", 3, -10, 3, "Y", "air", "default:mese_post_light", "T", -5},
