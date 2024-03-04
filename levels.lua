@@ -1,14 +1,3 @@
--- Register magma node
-minetest.register_node("hero_mines:magma", {
-    description = "Magma",
-    tiles = {"default_lava.png"},
-    light_source = 3,
-    groups = {cracky = 3, oddly_breakable_by_hand = 3},
-    damage_per_second = 24,
-    post_effect_color = {a = 103, r = 255, g = 100, b = 0},
-    walkable = false,
-    pointable = false,
-})
 
 
 --https://www.youtube.com/watch?v=bpzN0fagzi8&t=42s
