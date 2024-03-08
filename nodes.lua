@@ -58,7 +58,8 @@ registerNodeTouchAction("hero_mines:magma", magmaTouchAction)
 
 
 -- Define a new node for the broken lantern
-function default.register_mesepost(name, def)
+--function hero_mines.register_mesepost_broken(name, def)
+function register_mesepost_broken(name, def)
 	local post_texture = def.texture .. "^default_mese_post_light_side.png^[makealpha:0,0,0"
 	local post_texture_dark = def.texture .. "^default_mese_post_light_side_dark.png^[makealpha:0,0,0"
 	-- Allow almost everything to be overridden
@@ -92,8 +93,50 @@ function default.register_mesepost(name, def)
 	minetest.register_node(name, def)
 end
 
-default.register_mesepost("hero_mines:broken_mese_post_light", {
+--hero_mines.register_mesepost_broken("hero_mines:broken_mese_post_light", {
+	register_mesepost_broken("hero_mines:broken_mese_post_light", {
 	description = "Broken Apple Wood Mese Post Light",
+	texture = "default_fence_wood.png",
+	material = "default:wood",
+})
+
+-- Define a new node for a working lantern
+function register_mesepost_working(name, def)
+	local post_texture = def.texture .. "^default_mese_post_light_side.png^[makealpha:0,0,0"
+	local post_texture_dark = def.texture .. "^default_mese_post_light_side_dark.png^[makealpha:0,0,0"
+	-- Allow almost everything to be overridden
+	local default_fields = {
+		wield_image = post_texture,
+		drawtype = "nodebox",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-2 / 16, -8 / 16, -2 / 16, 2 / 16, 8 / 16, 2 / 16},
+			},
+		},
+		paramtype = "light",
+		tiles = {def.texture, def.texture, post_texture_dark, post_texture_dark, post_texture, post_texture},
+		use_texture_alpha = "opaque",
+		light_source = default.LIGHT_MAX,
+		sunlight_propagates = true,
+		is_ground_content = false,
+		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		sounds = default.node_sound_wood_defaults(),
+	}
+	for k, v in pairs(default_fields) do
+		if def[k] == nil then
+			def[k] = v
+		end
+	end
+
+	def.texture = nil
+	def.material = nil
+
+	minetest.register_node(name, def)
+end
+
+register_mesepost_working("hero_mines:working_mese_post_light", {
+	description = "Working Apple Wood Mese Post Light",
 	texture = "default_fence_wood.png",
 	material = "default:wood",
 })
@@ -108,7 +151,7 @@ local function mesepostTouchAction(player)
 				local neighbor_pos = {x = pos.x + dx, y = pos.y + dy, z = pos.z + dz}
 				local node = minetest.get_node(neighbor_pos)
 				
-				if node.name == "default:mese_post_light" then
+				if node.name == "hero_mines:working_mese_post_light" then
 					minetest.swap_node(neighbor_pos, {name = "hero_mines:broken_mese_post_light", param2 = node.param2})
 				end
 			end
@@ -118,4 +161,5 @@ local function mesepostTouchAction(player)
 end
 
 -- Register global step action for magma nodes
-registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
+--registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
+registerNodeTouchAction("hero_mines:working_mese_post_light", mesepostTouchAction)
