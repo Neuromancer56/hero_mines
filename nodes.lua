@@ -50,7 +50,7 @@ minetest.register_node("hero_mines:magma", {
 
 
 local function magmaTouchAction(player)
-    player:set_hp(player:get_hp() - 1, "magma")
+    player:set_hp(player:get_hp() - 4, "magma")
 end
 
 -- Register global step action for magma nodes
