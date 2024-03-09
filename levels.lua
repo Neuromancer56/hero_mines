@@ -229,7 +229,95 @@ local script_tables = {
 		{"fill_box", 11, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 6},
 		{"fill_box", 2, 4, 3, "X", "air", "default:chest", "B", 1},
 	},
-	--level 6 
+	--level 6
+	{
+		--screen 1 (1:48 start lvl)
+		{"fill_box", 3, -10, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "x", -4},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 6, 4, 3, "X", "air"},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 10, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 5},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -9},
+		{"fill_box", 3, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 2 (1:52 start lvl)
+		{"move", "x", -11},
+		{"fill_box", 8, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 4},
+		{"fill_box", 1, 4, 3, "X", "default:cobble",},
+		{"fill_box", 12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
+		{"move", "x", -7},
+		{"fill_box", 6, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12},
+		{"move", "x", -13},
+		{"fill_box", 6, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 3 (1:54 start lvl)
+		{"move", "x", -4},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 14, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 9, 4, 3, "X", "air"},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -17},
+		{"fill_box", 3, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 4 (1:57 start lvl)
+		{"move", "x", -7},
+		{"fill_box", 18, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
+		{"move", "x", -2,},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12,},
+		{"move", "x", -4,},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12,},
+		{"move", "x", -7,},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12,},
+		{"move", "x", -4,},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 5 (1:59 start lvl)
+		{"move", "x", -5},
+		{"fill_box", 8, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 4, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 1},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 4, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 1},
+		{"fill_box", 8, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -10},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12},
+		{"move", "x", -6},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 6 (2:03 start lvl)
+		{"move", "y", -2},
+		{"move", "x", -6},
+		{"fill_box", 6, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 2},
+		{"move", "x", 6},
+		{"fill_box", 6, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 5},
+		{"move", "x", -2},
+		{"fill_box", -12, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 7 (2:04 start lvl)
+		{"move", "x", -18},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 20, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 2},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -5},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12,},
+		{"move", "x", -17},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 8 (2:06 start lvl)
+		{"move", "x", -1},
+		{"fill_box", 9, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 2},
+		{"fill_box", 1, 4, 3, "X", "default:cobble"},
+		{"fill_box", 10, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 2},
+		{"move", "x", -7},	
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},	
+		{"move", "y", 12},
+		{"move", "x", -8},	
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},	
+		--screen 9 (2:11 start lvl)
+
+	},
+	--level 7 
 	{
 		--screen 1 (:55 start lvl)
 		{"fill_box", 3, -10, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
@@ -308,7 +396,7 @@ local script_tables = {
 
 
 	}
-	
+
 }
 
 --https://www.youtube.com/watch?v=bpzN0fagzi8&t=42s
