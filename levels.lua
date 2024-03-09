@@ -211,7 +211,23 @@ local script_tables = {
 		{"fill_box", 3, 4, 3, "X", "hero_mines:magma",},
 		{"move", "x", -15},
 		{"fill_box", 3, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
-		--screen 5 (1:38 start)
+		--screen 6 (1:38 start)
+		{"move", "x", -12},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma",},
+		{"fill_box", 5, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 3},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma",},
+		{"fill_box", 12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 6},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma",},
+		{"move", "x", -7},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		{"move", "y", 12},
+		{"move", "x", -11},
+		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 7 (1:42 start)
+		{"move", "x", -4},
+		{"fill_box", 12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 7},
+		{"fill_box", 11, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 6},
+		{"fill_box", 2, 4, 3, "X", "air", "default:chest", "B", 1},
 	},
 	--level 6 
 	{
@@ -309,24 +325,5 @@ for level = 1, #script_tables do
         end,
     })
 end
-
-
-
-
-local script_table_levelmagma = {
-    {"fill_box", 3, -10, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
-    {"move", "x", -1},
-    {"fill_box", 6, 4, 3, "X", "air", nil, nil, nil},
-	{"fill_box", 1, 4, 3, "X", "hero_mine_items:magma", nil, nil, nil},
-	{"fill_box", 10, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 5},
-	{"move", "x", -9},
-	{"fill_box", 3, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
-	--screen 2
-	{"move", "x", 10},
-	{"fill_box", -10, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -5},
-	{"fill_box", -12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -5},
-	{"fill_box", -4, 4, 3, "X", "air", "default:chest", "B", -2},
-}
-
 
 
