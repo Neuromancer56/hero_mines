@@ -315,7 +315,19 @@ local script_tables = {
 		{"move", "x", -8},	
 		{"fill_box", 1, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},	
 		--screen 9 (2:11 start lvl)
-
+		{"move", "x", -7},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 8, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
+		{"fill_box", 1, 4, 3, "X", "hero_mines:magma"},
+		{"fill_box", 14, 4, 3, "X", "air"},
+		{"fill_box", 3, 4, 3, "X", "hero_mines:magma"},
+		{"move", "x", -17},
+		{"fill_box", 3, -12, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", -5},
+		--screen 10 (2:11 start lvl)
+		{"fill_box", 12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
+		{"move", "x", -12},
+		{"fill_box", -8, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -4},
+		{"fill_box", -1, 4, 3, "X", "air", "default:chest", "B", 0},
 	},
 	--level 7 
 	{
