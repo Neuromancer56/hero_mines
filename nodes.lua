@@ -163,3 +163,64 @@ end
 -- Register global step action for magma nodes
 --registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
 registerNodeTouchAction("hero_mines:working_mese_post_light", mesepostTouchAction)
+
+minetest.register_node("hero_mines:trapped_miner", {
+	description = "Trapped Miner",
+	drawtype = "mesh",
+	mesh = "trapped_miner.obj",
+	paramtype2 = 3,
+	tiles = {
+		"trapped_miner.png",
+	},
+	visual_scale = 0.28,
+	wield_image = "trapped_miner_item.png",
+	wield_scale = {x=1.0, y=1.0, z=1.0},
+	paramtype = "light",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
+	},
+	inventory_image = "badland_scarecrow_item.png",
+	groups = {choppy = 1, oddly_breakable_by_hand = 1, scarecrow = 1},
+	sounds = default.node_sound_wood_defaults()
+})
+
+--[[minetest.register_node("hero_mines:trapped_miner", {
+	description = "Trapped Miner",
+	drawtype = "mesh",
+	drop = "hero_mines:trapped_miner",
+	groups = miner_groups,
+	inventory_image =  "trapped_miner_item.png",  --***
+	mesh = "trapped_miner.obj", --*** .obj, .bd3?
+	visual_scale = 0.3,
+	on_place = function(itemstack, placer, pointed_thing)
+		local pointed_pos = minetest.get_pointed_thing_position(pointed_thing, true)
+		local return_value = minetest.item_place(itemstack, placer, pointed_thing, math.random(0,3))
+		local node_name = minetest.get_node(pointed_pos).name
+			minetest.set_node(pointed_pos, {name = "hero_mines:trapped_miner",
+											 param2 = math.random(0,3)})
+		--end
+
+		return return_value
+	end,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
+	},
+	collision_box = cbox,
+	sunlight_propagates = true,
+	tiles = {"trapped_miner.png"},  --***
+	walkable = true,
+	--sounds = {
+		--walk = {name = "default_gravel_footstep", gain = 0.5},
+		--},
+	sounds = default.node_sound_gravel_defaults(),
+
+})]]
+
