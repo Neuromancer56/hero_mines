@@ -168,11 +168,15 @@ minetest.register_node("hero_mines:trapped_miner", {
 	description = "Trapped Miner",
 	drawtype = "mesh",
 	mesh = "trapped_miner.obj",
+	--mesh = "Miner.b3d",
 	paramtype2 = 3,
 	tiles = {
 		"trapped_miner.png",
+		--"texturemedminer.png",
 	},
-	visual_scale = 0.28,
+	visual_scale = 1.0,
+	--visual_scale = 0.28,
+	--visual_scale = 0.1,
 	wield_image = "trapped_miner_item.png",
 	wield_scale = {x=1.0, y=1.0, z=1.0},
 	paramtype = "light",
@@ -184,7 +188,7 @@ minetest.register_node("hero_mines:trapped_miner", {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
 	},
-	inventory_image = "badland_scarecrow_item.png",
+	inventory_image = "trapped_miner_item.png",
 	groups = {choppy = 1, oddly_breakable_by_hand = 1, scarecrow = 1},
 	sounds = default.node_sound_wood_defaults()
 })
