@@ -193,6 +193,80 @@ minetest.register_node("hero_mines:trapped_miner", {
 	sounds = default.node_sound_wood_defaults()
 })
 
+
+minetest.register_node("hero_mines:rescued_miner", {
+	description = "Rescued Miner",
+	drawtype = "mesh",
+	mesh = "rescued_miner.obj",
+	--mesh = "Miner.b3d",
+	paramtype2 = 3,
+	tiles = {
+		"trapped_miner.png",
+		--"texturemedminer.png",
+	},
+	visual_scale = 1.0,
+	--visual_scale = 0.28,
+	--visual_scale = 0.1,
+	wield_image = "trapped_miner_item.png",
+	wield_scale = {x=1.0, y=1.0, z=1.0},
+	paramtype = "light",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
+	},
+	inventory_image = "trapped_miner_item.png",
+	groups = {choppy = 1, oddly_breakable_by_hand = 1, scarecrow = 1},
+	sounds = default.node_sound_wood_defaults()
+})
+
+local function removeMiner()
+	local numberx = 1+2
+end
+
+local function minerTouchAction(player)
+	local pos = player:get_pos()
+	for dx = -2, 2 do
+		for dy = -2, 2 do
+			for dz = -2, 2 do
+				local neighbor_pos = {x = pos.x + dx, y = pos.y + dy, z = pos.z + dz}
+				local node = minetest.get_node(neighbor_pos)
+				
+				if node.name == "hero_mines:trapped_miner" then
+					minetest.swap_node(neighbor_pos, {name = "hero_mines:rescued_miner", param2 = node.param2})
+				end
+			end
+		end
+	end
+    minetest.sound_play("grunt", {pos = pos, gain = 0.5, max_hear_distance = 10})
+
+	minetest.after(0.5, function()
+		for dx = -2, 2 do
+			for dy = -2, 2 do
+				for dz = -2, 2 do
+					local neighbor_pos = {x = pos.x + dx, y = pos.y + dy, z = pos.z + dz}
+					local node = minetest.get_node(neighbor_pos)
+					if node.name == "hero_mines:rescued_miner" then
+						minetest.swap_node(neighbor_pos, {name = "air", param2 = node.param2})
+					end
+				end
+			end
+		end
+	end)
+	local inventory = player:get_inventory()
+	inventory:add_item("main", "hero_mines:trapped_miner")
+end
+
+
+
+
+-- Register global step action for magma nodes
+--registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
+registerNodeTouchAction("hero_mines:trapped_miner", minerTouchAction)
+
 --[[minetest.register_node("hero_mines:trapped_miner", {
 	description = "Trapped Miner",
 	drawtype = "mesh",
