@@ -257,7 +257,7 @@ local function minerTouchAction(player)
 		end
 	end)
 	local inventory = player:get_inventory()
-	inventory:add_item("main", "hero_mines:trapped_miner")
+	inventory:add_item("main", "hero_mines:rescued_miner")
 end
 
 
