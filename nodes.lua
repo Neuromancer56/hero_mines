@@ -164,6 +164,7 @@ end
 --registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
 registerNodeTouchAction("hero_mines:working_mese_post_light", mesepostTouchAction)
 
+
 minetest.register_node("hero_mines:trapped_miner", {
 	description = "Trapped Miner",
 	drawtype = "mesh",
@@ -180,6 +181,7 @@ minetest.register_node("hero_mines:trapped_miner", {
 	wield_image = "trapped_miner_item.png",
 	wield_scale = {x=1.0, y=1.0, z=1.0},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
@@ -189,10 +191,9 @@ minetest.register_node("hero_mines:trapped_miner", {
 		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
 	},
 	inventory_image = "trapped_miner_item.png",
-	groups = {choppy = 1, oddly_breakable_by_hand = 1, scarecrow = 1},
+	groups = {choppy = 1, oddly_breakable_by_hand = 1},
 	sounds = default.node_sound_wood_defaults()
 })
-
 
 minetest.register_node("hero_mines:rescued_miner", {
 	description = "Rescued Miner",
@@ -210,6 +211,7 @@ minetest.register_node("hero_mines:rescued_miner", {
 	wield_image = "trapped_miner_item.png",
 	wield_scale = {x=1.0, y=1.0, z=1.0},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
@@ -236,7 +238,10 @@ local function minerTouchAction(player)
 				local node = minetest.get_node(neighbor_pos)
 				
 				if node.name == "hero_mines:trapped_miner" then
+					--local newparam2 = 3
+					--if (node.param2 == 2) then newparam2 = 1 end
 					minetest.swap_node(neighbor_pos, {name = "hero_mines:rescued_miner", param2 = node.param2})
+					--minetest.log("x", "replaceminer param2: "..node.param2)
 				end
 			end
 		end
