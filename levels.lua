@@ -19,7 +19,7 @@ local script_tables = {
 		{"fill_box", -10, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -5},
 		{"fill_box", -9, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -5},
 		{"fill_box", -1, 4, 3, "X", "default:gravel", nil, nil, nil},
-		{"fill_box", -2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 0},
+		{"fill_box", -2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", -1},
 	},
 	--level 2
 	{
@@ -53,7 +53,7 @@ local script_tables = {
 		{"move", "x", -4},
 		{"fill_box", 13, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 14},
 		{"fill_box", 1, 4, 3, "X", "default:gravel", nil, nil, nil},
-		{"fill_box", 2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 0},
+		{"fill_box", 2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 1},
 	},
 	--level 3
 	{
@@ -451,7 +451,7 @@ local script_tables = {
 		{"fill_box", 24, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 19},
 		{"move", "x", -22},	
 		{"fill_box", 18, -4, 3, "Y", "air"},
-		{"fill_box", 18, -4, 3, "Y", "default:water_source"},
+		{"fill_box", 18, -4, 3, "Y", "default:lava_source"},
 		{"move", "y", 7},	
 		{"move", "x", 18},	
 		--screen 12 (2:56 start)	

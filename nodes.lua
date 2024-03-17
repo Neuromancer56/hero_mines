@@ -169,7 +169,7 @@ minetest.register_node("hero_mines:trapped_miner", {
 	drawtype = "mesh",
 	mesh = "trapped_miner.obj",
 	--mesh = "Miner.b3d",
-	paramtype2 = 3,
+	--paramtype2 = 3,
 	tiles = {
 		"trapped_miner.png",
 		--"texturemedminer.png",
@@ -199,7 +199,7 @@ minetest.register_node("hero_mines:rescued_miner", {
 	drawtype = "mesh",
 	mesh = "rescued_miner.obj",
 	--mesh = "Miner.b3d",
-	paramtype2 = 3,
+	--paramtype2 = 3,
 	tiles = {
 		"trapped_miner.png",
 		--"texturemedminer.png",
@@ -219,7 +219,7 @@ minetest.register_node("hero_mines:rescued_miner", {
 		fixed = {-0.3, -0.5, -0.3, 0.3, 1, 0.3}
 	},
 	inventory_image = "trapped_miner_item.png",
-	groups = {choppy = 1, oddly_breakable_by_hand = 1, scarecrow = 1},
+	groups = {choppy = 1, oddly_breakable_by_hand = 1},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -266,6 +266,53 @@ end
 -- Register global step action for magma nodes
 --registerNodeTouchAction("default:mese_post_light", mesepostTouchAction)
 registerNodeTouchAction("hero_mines:trapped_miner", minerTouchAction)
+
+
+
+minetest.register_node("hero_mines:toxic_water_source", {
+	description = ("Toxic Water Source"),
+	drawtype = "liquid",
+	waving = 3,
+	tiles = {
+		{
+			name = "default_water_source_animated.png^[colorize:green:40",
+			backface_culling = false,
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 2.0,
+			},
+		},
+		{
+			name = "default_water_source_animated.png^[colorize:green:40",
+			backface_culling = true,
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 2.0,
+			},
+		},
+	},
+	use_texture_alpha = "blend",
+	paramtype = "light",
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true,
+	is_ground_content = false,
+	drop = "",
+	drowning = 1,
+	liquidtype = "source",
+	liquid_alternative_flowing = "default:water_flowing",
+	liquid_alternative_source = "hero_mines:toxic_water_source",
+	liquid_viscosity = 1,
+	damage_per_second = 4 * 2,
+	post_effect_color = {a = 103, r = 30, g = 60, b = 90},
+	groups = {water = 3, liquid = 3, cools_lava = 1},
+	sounds = default.node_sound_water_defaults(),
+})
 
 --[[minetest.register_node("hero_mines:trapped_miner", {
 	description = "Trapped Miner",
