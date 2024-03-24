@@ -319,38 +319,3 @@ minetest.register_node("hero_mines:toxic_water_source", {
 	sounds = default.node_sound_water_defaults(),
 })
 
---[[minetest.register_node("hero_mines:trapped_miner", {
-	description = "Trapped Miner",
-	drawtype = "mesh",
-	drop = "hero_mines:trapped_miner",
-	groups = miner_groups,
-	inventory_image =  "trapped_miner_item.png",  --***
-	mesh = "trapped_miner.obj", --*** .obj, .bd3?
-	visual_scale = 0.3,
-	on_place = function(itemstack, placer, pointed_thing)
-		local pointed_pos = minetest.get_pointed_thing_position(pointed_thing, true)
-		local return_value = minetest.item_place(itemstack, placer, pointed_thing, math.random(0,3))
-		local node_name = minetest.get_node(pointed_pos).name
-			minetest.set_node(pointed_pos, {name = "hero_mines:trapped_miner",
-											 param2 = math.random(0,3)})
-		--end
-
-		return return_value
-	end,
-	paramtype = "light",
-	paramtype2 = "facedir",
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, -0.3125, 0.5},
-	},
-	collision_box = cbox,
-	sunlight_propagates = true,
-	tiles = {"trapped_miner.png"},  --***
-	walkable = true,
-	--sounds = {
-		--walk = {name = "default_gravel_footstep", gain = 0.5},
-		--},
-	sounds = default.node_sound_gravel_defaults(),
-
-})]]
-
