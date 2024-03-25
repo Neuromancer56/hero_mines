@@ -334,7 +334,7 @@ local script_tables = {
 		{"fill_box", 12, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", 8},
 		{"move", "x", -12},
 		{"fill_box", -6, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -4},
-		{"fill_box", -1, 4, 3, "X", "default:gravel", nil, nil, nil},
+		{"fill_box", -1, 2, 3, "X", "default:gravel", nil, nil, nil},
 		{"fill_box", -2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 0},
 	},
 	--level 7 
@@ -614,6 +614,10 @@ local script_tables = {
 		{"fill_box", -2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 0},
 
 	},
+	--[[level 9
+	{
+		--screen 1 (3:44 start lvl)
+	},]]
 	--level X
 	{
 		--screen 1 (:55 start lvl)
@@ -689,7 +693,7 @@ local script_tables = {
 		{"fill_box", 3, 4, 3, "Y", "air", "hero_mines:working_mese_post_light", "T", 4},
 		{"move", "y", -4},
 		{"fill_box", -4, 4, 3, "X", "air", "hero_mines:working_mese_post_light", "T", -2},
-		{"fill_box", -1, 4, 3, "X", "default:gravel", nil, nil, nil},
+		{"fill_box", -1, 2, 3, "X", "default:gravel", nil, nil, nil},
 		{"fill_box", -2, 4, 3, "X", "air", "hero_mines:trapped_miner", "B", 0},
 	}
 
